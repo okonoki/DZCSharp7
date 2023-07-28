@@ -37,7 +37,8 @@ void PrintArray(double[,] array)
     }
 }
 
-int rows = GetNumber("Введите количество строк: ");
-int columns = GetNumber("Введите количество столбцов: ");
+int rows = GetNumber("Введите количество строк массива: ");
+int columns = GetNumber("Введите количество столбцов массива: ");
+
 double[,] array = GetArray(rows, columns);
 PrintArray(array);
