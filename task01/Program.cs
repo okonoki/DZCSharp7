@@ -13,12 +13,14 @@ int GetNumber(string message)
 double[,] GetArray(int rows, int columns)
 {
     double[,] array = new double[rows, columns];
+    Random random= new Random()!;
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < columns; j++)
         {
-            array[i, j] = new Random().NextDouble() * 10;
-            array[i, j] = Math.Round(array[i, j], 2);
+            // array[i, j] = new Random().NextDouble() * 10;
+            // array[i, j] = Math.Round(array[i, j], 2);
+            array[i, j] = Math.Round(random.NextDouble() * 10, 2);
         }
     }
     return array;
@@ -30,7 +32,7 @@ void PrintArray(double[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            
+
             Console.Write($"{array[i, j]} ");
         }
         Console.WriteLine();

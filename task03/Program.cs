@@ -15,11 +15,12 @@ int GetNumber(string message)
 int[,] GetArray(int row, int column)
 {
     int[,] array = new int[row, column];
+    Random rnd = new Random()!;
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < column; j++)
         {
-            array[i, j] = new Random().Next(0, 10);
+            array[i, j] = rnd.Next(0, 10);
         }
     }
     return array;
@@ -46,7 +47,8 @@ void GetSum(int[,] array)
         {
             sum += array[j, i];
         }
-        Console.Write($"{sum / array.GetLength(0):F1} ");
+        // Console.Write($"{sum / array.GetLength(0):F1} ");
+        Console.Write($"{Math.Round(sum / array.GetLength(0), 2)} ");
     }
 }
 

@@ -38,20 +38,14 @@ void PrintArray(int[,] arr)
     }
 }
 
-bool GetResultNumber(int[,] arr, int row, int column)
+void GetResultNumber(int[,] arr, int row, int column)
 {
-    for (int i = 0; i < arr.GetLength(0); i++)
+
+    if (row < arr.GetLength(0) && column < arr.GetLength(1))
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            if (row == i && column == j) 
-            {
-                Console.Write(arr[i, j]);
-                return false;
-            }
-        }
+        Console.Write(arr[row, column]);
     }
-    return true;
+   else Console.Write("Такого числа нет в массиве!");
 }
 
 int rows = GetNumber("Введите количество строк массива: ");
@@ -62,4 +56,4 @@ PrintArray(array);
 
 int resRow = GetNumber("Введите индекс строки массива: ");
 int resColumn = GetNumber("Введите индекс столбца массива: ");
-if (GetResultNumber(array, resRow, resColumn)) Console.Write("Такого числа нет в массиве!");
+GetResultNumber(array, resRow, resColumn);
